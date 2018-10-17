@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>mod_cap_header</name>
+    <author>Pallavi Patil</author>
+    <version>1.0.0</version>
+    <description>Cash a phone custom header module.</description>
+    <files>
+        <filename module="mod_cap_header">mod_cap_header.php</filename>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+    </files>
+    <config>
+    </config>
+</extension>
