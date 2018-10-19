@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 
 if (($this->error->getCode()) == '404') {
-	header('Location: ' . JRoute::_(JURI::root()."index.php?option=com_content&view=article&id=14", false));
+	header('Location: ' . JRoute::_(JURI::root()."404", false));
 	exit;
 }
 

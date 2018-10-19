@@ -35,7 +35,7 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                 	<div class="row">
                     	<!-- logo --> 
                     	<div class="col-2">
-                        	<a href="home.html" class="logo"><img class="img-responsive" src="images/cashaphone/logo.png" alt=""/></a>
+                        	<a href="home" class="logo"><img class="img-responsive" src="images/cashaphone/logo.png" alt=""/></a>
                     	</div>
                     	<!-- logo -->
                     	<div class="col-10">
