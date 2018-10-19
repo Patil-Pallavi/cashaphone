@@ -41,9 +41,11 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                     	<div class="col-10">
                         	<div class="social-bar">
 	                            <div class="top_search">
-	                                <form class="header_search">
+	                                <form action="search-result" method="get" class="header_search" >
 	                                    <div class="form-group">
 	                                        <input id="top_search" class="form-control" type="text" name="model" value="" placeholder="SEARCH YOUR MODEL HERE">
+                                            <input type="hidden" name="make" value="">
+                                            <input type="hidden" name="Search" value="search">
 	                                        <button><img src="images/cashaphone/top_search_new.png" alt="" ></button>
 	                                    </div>
 	                                </form>
