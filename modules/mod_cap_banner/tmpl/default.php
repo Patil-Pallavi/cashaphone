@@ -32,6 +32,7 @@ $imagesDir = JURI::base() . 'images/cashaphone';
                                     <input id="roksearch_search_str" class="form-control" type="text" name="model" value="" placeholder="SEARCH YOUR MODEL HERE">
                                     <button><a href="#"><img src="<?php echo $imagesDir; ?>/search.png" alt=""></a></button>
                                     <input type="hidden" name="make" value="">
+                                    <input type="hidden" name="Search" value="search">
                                 </div>
 
                             </form>
