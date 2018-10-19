@@ -2847,7 +2847,7 @@ footer .footer-bottom span{
 .error_page{
     width: 100%;
     padding: 300px 0px 100px;
-    background: url("../images/error_bg.png") no-repeat;
+    background: url("../../../images/cashaphone/error_bg.png") no-repeat;
     background-position: right center;
 }
 .error_page .error_cont{
