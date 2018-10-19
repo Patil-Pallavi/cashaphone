@@ -71,7 +71,10 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
 	        $manufacturer = $menuitem->params['menu-meta_keywords'];
 	    }
 	    ?>
-    <?php if (isset($manufacturer) && $manufacturer == 'manufacturer') { ?>
+
+    <?php if($articleId == '14'){ ?>
+        <jdoc:include type="component" />    
+    <?php } else if (isset($manufacturer) && $manufacturer == 'manufacturer') { ?>
         <section class="gadget-area">		
             <jdoc:include type="modules" name="fullwidth" style="none" />
 
