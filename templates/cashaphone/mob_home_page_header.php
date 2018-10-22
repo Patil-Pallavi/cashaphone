@@ -3,7 +3,7 @@
   	<div class="mobile_headaer">
   		<div class="row">
   			<div class="col-6 col-sm-6">
-  				<a href="mob_home.html" class="logo">
+  				<a href="home" class="logo">
   				   <img class="img-responsive" src="images/cashaphone/logo.png" alt=""/>
   				</a>
   			</div>
@@ -113,3 +113,14 @@
   	</div>
   </div>
 </header>
+<section class="video_sec">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-12">
+			  <div class="video_wrap">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/9XdcTyaSorU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			  </div>
+			</div>
+		</div>
+	</div>
+</section>
