@@ -163,7 +163,8 @@ header .main_menu li a{
   font-size: 16px;
   color: #fff;
   border-right: 1px solid #5c554e;
-  padding: 2px 25px;  
+  padding: 2px 25px;
+  text-decoration: none;
 }
 header .main_menu li:last-child a{
     padding-right: 0;
