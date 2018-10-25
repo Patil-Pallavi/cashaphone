@@ -31,7 +31,7 @@ JHtml::_('behavior.formvalidator');
 				<textarea id="jform_contact_message" class="required form-control" aria-required="true" required="required" rows="10" cols="50" name="jform[contact_message]" placeholder="Message"></textarea>		
 			</div>
 			<button class="contact_send" type="submit">SEND</button>
-			<input id="jform_contact_email_copy" type="checkbox" value="1" name="jform[contact_email_copy]" hidden="true">
+			<input id="jform_contact_email_copy" type="checkbox" value="1" name="jform[contact_email_copy]" hidden="true" checked="true">
 			<input type="hidden" name="option" value="com_contact" />
 			<input type="hidden" name="task" value="contact.submit" />
 			<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
