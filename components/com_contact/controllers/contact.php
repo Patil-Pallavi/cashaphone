@@ -224,8 +224,8 @@ class ContactControllerContact extends JControllerForm
 		$mail->addRecipient($email);
 		$mail->addReplyTo($email, $name);
 		$mail->setSender(array($mailfrom, $fromname));
-		$mail->setSubject('Copy of' . ': ' . $subject);
-		$mail->setBody("This is a copy of the following message you sent to Contact Us via joomla demo : ".$body);
+		$mail->setSubject($subject);
+		$mail->setBody($body);
 		$sent = $mail->Send();
 
 		// If we are supposed to copy the sender, do so.
