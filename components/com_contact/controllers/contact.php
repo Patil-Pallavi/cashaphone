@@ -211,16 +211,21 @@ class ContactControllerContact extends JControllerForm
 			}
 		}
 
-		$copytext    = JText::sprintf('COM_CONTACT_COPYTEXT_OF', $contact->name, $sitename);
-		$copytext    .= "\r\n\r\n" . $body;
-		$copysubject = JText::sprintf('COM_CONTACT_COPYSUBJECT_OF', $subject);
+		$mail = JFactory::getMailer();
+		$mail->addRecipient($contact->email_to);
+		$mail->addReplyTo($email, $name);
+		$mail->setSender(array($mailfrom, $fromname));
+		$mail->setSubject($sitename . ': ' . $subject);
+		$mail->setBody($body);
+		$sent = $mail->Send();
+
 
 		$mail = JFactory::getMailer();
 		$mail->addRecipient($email);
 		$mail->addReplyTo($email, $name);
 		$mail->setSender(array($mailfrom, $fromname));
-		$mail->setSubject($copysubject);
-		$mail->setBody($copytext);
+		$mail->setSubject($sitename . ': ' . $subject);
+		$mail->setBody($body);
 		$sent = $mail->Send();
 
 		// If we are supposed to copy the sender, do so.
