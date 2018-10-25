@@ -55,14 +55,17 @@ $imagesDir = JURI::base() . 'images/cashaphone';
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col- col-sm-12 col-md-12 col-lg-5 col-xl-5">
-                        <div class="check-btn-sec">
-                            <a rel="rokbox[800 475](Cash-a-phone_Intro)" href="https://www.youtube.com/embed/AkiLuczvGzo?autoplay=1&rel=0" title="Introduction" class="chk-button"> 
-                                <img class="img-responsive" src="<?php echo $imagesDir; ?>/green-traingle.png" alt="">
-                                <span class="caption">check out <b>intro video</b></span>
-                            </a>
-                        </div>
+                   <div class="col- col-sm-12 col-md-7 col-lg-5 col-xl-5">
+                    <div class="check-btn-sec">
+                        <a class="chk-button html5lightbox" href="#mydiv" title=""> 
+                            <img class="img-responsive" src="images/cashaphone/green-traingle.png" alt="">
+                            <span class="caption">check out <b>intro video</b></span>                   
+                        </a>
                     </div>
+                    <div id="mydiv" style="display:none;">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/9XdcTyaSorU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                   </div>
                 </div>
             </div>
         </div>

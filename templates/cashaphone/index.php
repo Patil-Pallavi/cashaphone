@@ -155,5 +155,6 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
             </html>
             <script src="<?php echo $templateDir; ?>/js/jquery.min.js"></script>
             <script src="<?php echo $templateDir; ?>/js/bootstrap.min.js"></script>
+            <script src="<?php echo $templateDir; ?>/js/html5lightbox.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
             <script src="<?php echo $templateDir; ?>/js/custom.js"></script>
