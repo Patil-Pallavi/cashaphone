@@ -11,9 +11,15 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidator');
-
+$app = JFactory::getApplication();
+$messageQueue = $app->getMessageQueue();
 ?>
 <div class="col- col-sm-12 col-md-8 col-lg-5 col-xl-5 ">
+<?php if(isset($messageQueue[0]['message']) && $messageQueue[0]['message'] != ''){ ?>
+	<div class="alert alert-success alert-dismissible">
+	  	<strong><?php echo $messageQueue[0]['message']; ?></strong>
+	</div>
+<?php } ?>
 <h1>Contact Us</h1>
 	<div class="contact_us_cont">
 		<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate form-horizontal well">
