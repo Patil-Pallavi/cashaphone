@@ -128,12 +128,10 @@ class ContactControllerContact extends JControllerForm
 		$sent = false;
 
 		if (!$params->get('custom_reply'))
-		{	
-			// echo "<pre>"; print_r($data); echo "</pre>";echo "<br>";
-			// echo "<pre>"; print_r($params->get('show_email_copy', 0)); echo "</pre>";die;
+		{
 			$sent = $this->_sendEmail($data, $contact, $params->get('show_email_copy', 0));
 		}
-		echo 'else'; die;
+
 		// Set the success message if it was a success
 		if (!($sent instanceof Exception))
 		{
@@ -213,19 +211,23 @@ class ContactControllerContact extends JControllerForm
 			}
 		}
 
+		$copytext    = JText::sprintf('COM_CONTACT_COPYTEXT_OF', $contact->name, $sitename);
+		$copytext    .= "\r\n\r\n" . $body;
+		$copysubject = JText::sprintf('COM_CONTACT_COPYSUBJECT_OF', $subject);
+
 		$mail = JFactory::getMailer();
-		$mail->addRecipient($contact->email_to);
+		$mail->addRecipient($email);
 		$mail->addReplyTo($email, $name);
 		$mail->setSender(array($mailfrom, $fromname));
-		$mail->setSubject($sitename . ': ' . $subject);
-		$mail->setBody($body);
+		$mail->setSubject($copysubject);
+		$mail->setBody($copytext);
 		$sent = $mail->Send();
-		echo 'test here'; die;
+
 		// If we are supposed to copy the sender, do so.
-		mail($email,'$copysubject','$copytext');
+
 		// Check whether email copy function activated
 		if ($copy_email_activated == true && !empty($data['contact_email_copy']))
-		{	
+		{
 			$copytext    = JText::sprintf('COM_CONTACT_COPYTEXT_OF', $contact->name, $sitename);
 			$copytext    .= "\r\n\r\n" . $body;
 			$copysubject = JText::sprintf('COM_CONTACT_COPYSUBJECT_OF', $subject);
@@ -236,10 +238,7 @@ class ContactControllerContact extends JControllerForm
 			$mail->setSender(array($mailfrom, $fromname));
 			$mail->setSubject($copysubject);
 			$mail->setBody($copytext);
-			$sent = mail($email,'$copysubject','$copytext');
-			//$sent = $mail->Send();
-
-			echo $sent; die;
+			$sent = $mail->Send();
 		}
 
 		return $sent;
