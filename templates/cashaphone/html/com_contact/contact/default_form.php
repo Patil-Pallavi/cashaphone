@@ -29,11 +29,9 @@ JHtml::_('behavior.formvalidator');
 			</div>
 			<div class="form-group">
 				<textarea id="jform_contact_message" class="required form-control" aria-required="true" required="required" rows="10" cols="50" name="jform[contact_message]" placeholder="Message"></textarea>		
-			</div>
-			<div class="control-label"><?php echo $this->form->getLabel('contact_email_copy'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('contact_email_copy'); ?></div>
+			</div>			
 			<button class="contact_send" type="submit">SEND</button>
-			<!-- <input id="jform_contact_email_copy" type="checkbox" value="1" name="jform[contact_email_copy]" hidden="true" checked="true"> -->
+			<input id="jform_contact_email_copy" type="checkbox" value="1" name="jform[contact_email_copy]" hidden="true" checked="true">
 			<input type="hidden" name="option" value="com_contact" />
 			<input type="hidden" name="task" value="contact.submit" />
 			<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
