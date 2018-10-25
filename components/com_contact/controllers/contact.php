@@ -128,10 +128,12 @@ class ContactControllerContact extends JControllerForm
 		$sent = false;
 
 		if (!$params->get('custom_reply'))
-		{
+		{	
+			// echo "<pre>"; print_r($data); echo "</pre>";echo "<br>";
+			// echo "<pre>"; print_r($params->get('show_email_copy', 0)); echo "</pre>";die;
 			$sent = $this->_sendEmail($data, $contact, $params->get('show_email_copy', 0));
 		}
-
+		echo 'else'; die;
 		// Set the success message if it was a success
 		if (!($sent instanceof Exception))
 		{
@@ -222,8 +224,8 @@ class ContactControllerContact extends JControllerForm
 		// If we are supposed to copy the sender, do so.
 
 		// Check whether email copy function activated
-		//if ($copy_email_activated == true && !empty($data['contact_email_copy']))
-		//{
+		if ($copy_email_activated == true && !empty($data['contact_email_copy']))
+		{	
 			$copytext    = JText::sprintf('COM_CONTACT_COPYTEXT_OF', $contact->name, $sitename);
 			$copytext    .= "\r\n\r\n" . $body;
 			$copysubject = JText::sprintf('COM_CONTACT_COPYSUBJECT_OF', $subject);
@@ -235,7 +237,8 @@ class ContactControllerContact extends JControllerForm
 			$mail->setSubject($copysubject);
 			$mail->setBody($copytext);
 			$sent = $mail->Send();
-		//}
+			echo $sent; die;
+		}
 
 		return $sent;
 	}
