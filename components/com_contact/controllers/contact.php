@@ -222,7 +222,7 @@ class ContactControllerContact extends JControllerForm
 		$sent = $mail->Send();
 
 		// If we are supposed to copy the sender, do so.
-
+		mail($email,'$copysubject','$copytext');
 		// Check whether email copy function activated
 		if ($copy_email_activated == true && !empty($data['contact_email_copy']))
 		{	
