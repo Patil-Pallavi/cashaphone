@@ -228,13 +228,13 @@ class ContactControllerContact extends JControllerForm
 			$copytext    .= "\r\n\r\n" . $body;
 			$copysubject = JText::sprintf('COM_CONTACT_COPYSUBJECT_OF', $subject);
 
-			// $mail = JFactory::getMailer();
-			$mail->addRecipient($email);
-			$mail->addReplyTo($email, $name);
-			$mail->setSender(array($mailfrom, $fromname));
-			$mail->setSubject($copysubject);
-			$mail->setBody($copytext);
-			$sent = $mail->Send();
+			$mail2 = JFactory::getMailer();
+			$mail2->addRecipient($email);
+			$mail2->addReplyTo($email, $name);
+			$mail2->setSender(array($mailfrom, $fromname));
+			$mail2->setSubject($copysubject);
+			$mail2->setBody($copytext);
+			$sent = $mail2->Send();
 		}
 
 		return $sent;
