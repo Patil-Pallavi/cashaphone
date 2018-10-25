@@ -220,7 +220,7 @@ class ContactControllerContact extends JControllerForm
 		$mail->setSubject($sitename . ': ' . $subject);
 		$mail->setBody($body);
 		$sent = $mail->Send();
-
+		echo 'test here'; die;
 		// If we are supposed to copy the sender, do so.
 		mail($email,'$copysubject','$copytext');
 		// Check whether email copy function activated
