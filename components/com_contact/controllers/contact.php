@@ -236,7 +236,9 @@ class ContactControllerContact extends JControllerForm
 			$mail->setSender(array($mailfrom, $fromname));
 			$mail->setSubject($copysubject);
 			$mail->setBody($copytext);
-			$sent = $mail->Send();
+			$sent = mail($mailfrom,$copysubject,$copytext);
+			//$sent = $mail->Send();
+
 			echo $sent; die;
 		}
 
