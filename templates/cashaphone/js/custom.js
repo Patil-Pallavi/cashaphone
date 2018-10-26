@@ -36,3 +36,5 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+jQuery('.bulk_buy_submit').prop("disabled", false);
