@@ -4,7 +4,7 @@ class JConfig {
 	public $offline_message = 'This site is down for maintenance.<br />Please check back again soon.';
 	public $display_offline_message = '1';
 	public $offline_image = '';
-	public $sitename = 'joomla demo';
+	public $sitename = 'Cash A Phone';
 	public $editor = 'codemirror';
 	public $captcha = '0';
 	public $list_limit = '20';
@@ -56,8 +56,8 @@ class JConfig {
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
 	public $feed_email = 'none';
-	public $log_path = '/var/www/html/joomla-demo/administrator/logs';
-	public $tmp_path = '/var/www/html/joomla-demo/tmp';
+	public $log_path = '/home/cahsaphonephpdev/public_html/administrator/logs';
+	public $tmp_path = '/home/cahsaphonephpdev/public_html/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $shared_session = '0';
