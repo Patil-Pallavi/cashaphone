@@ -2911,3 +2911,42 @@ footer .footer-bottom span{
 }
 
 }
+
+.visform .form-control{
+    color: #acacac !important;
+    text-align: center;
+    border-radius : 0 !important;
+    margin: 0 0 13px;
+    border: 1px solid #a9a9a9;
+}
+
+.visform textarea{
+    height: 140px !important;
+}
+
+.visCustomText {
+    color: #70b737;
+    display: block;
+    font-family: "Montserrat",sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+label{
+    display: none;
+}
+.visform .btn{
+    background: #70b737 none repeat scroll 0 0;
+    border: 1px solid #70b737;
+    color: #fff !important;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    height: 35px;
+    margin: 25px auto 50px;
+    padding: 0;
+    text-decoration: none;
+    transition: all 0.5s ease 0s;
+    width: 70%;
+}   

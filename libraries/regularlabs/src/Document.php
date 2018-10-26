@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -38,16 +38,16 @@ class Document
 			return Cache::get($cache_id);
 		}
 
-		$app = JFactory::getApplication();
+		$input = JFactory::getApplication()->input;
 
 		return Cache::set($cache_id,
 			(
 				self::isClient('administrator')
 				&& ( ! $exclude_login || ! JFactory::getUser()->get('guest'))
-				&& $app->input->get('task') != 'preview'
+				&& $input->get('task') != 'preview'
 				&& ! (
-					$app->input->get('option') == 'com_finder'
-					&& $app->input->get('format') == 'json'
+					$input->get('option') == 'com_finder'
+					&& $input->get('format') == 'json'
 				)
 			)
 		);
@@ -86,9 +86,9 @@ class Document
 			return Cache::get($cache_id);
 		}
 
-		$app = JFactory::getApplication();
+		$input = JFactory::getApplication()->input;
 
-		$option = $app->input->get('option');
+		$option = $input->get('option');
 
 		// always return false for these components
 		if (in_array($option, ['com_rsevents', 'com_rseventspro']))
@@ -96,7 +96,7 @@ class Document
 			return Cache::set($cache_id, false);
 		}
 
-		$task = $app->input->get('task');
+		$task = $input->get('task');
 
 		if (strpos($task, '.') !== false)
 		{
@@ -104,7 +104,7 @@ class Document
 			$task = array_pop($task);
 		}
 
-		$view = $app->input->get('view');
+		$view = $input->get('view');
 
 		if (strpos($view, '.') !== false)
 		{
@@ -118,8 +118,8 @@ class Document
 				|| ($option == 'com_comprofiler' && in_array($task, ['', 'userdetails']))
 				|| in_array($task, ['edit', 'form', 'submission'])
 				|| in_array($view, ['edit', 'form'])
-				|| in_array($app->input->get('do'), ['edit', 'form'])
-				|| in_array($app->input->get('layout'), ['edit', 'form', 'write'])
+				|| in_array($input->get('do'), ['edit', 'form'])
+				|| in_array($input->get('layout'), ['edit', 'form', 'write'])
 				|| self::isAdmin()
 			)
 		);
@@ -158,13 +158,15 @@ class Document
 			return Cache::get($cache_id);
 		}
 
+		$input = JFactory::getApplication()->input;
+
 		return Cache::set($cache_id,
 			(
 				JFactory::getDocument()->getType() == 'feed'
-				|| JFactory::getApplication()->input->getWord('format') == 'feed'
-				|| JFactory::getApplication()->input->getWord('format') == 'xml'
-				|| JFactory::getApplication()->input->getWord('type') == 'rss'
-				|| JFactory::getApplication()->input->getWord('type') == 'atom'
+				|| $input->getWord('format') == 'feed'
+				|| $input->getWord('format') == 'xml'
+				|| $input->getWord('type') == 'rss'
+				|| $input->getWord('type') == 'atom'
 			)
 		);
 	}
@@ -183,11 +185,13 @@ class Document
 			return Cache::get($cache_id);
 		}
 
+		$input = JFactory::getApplication()->input;
+
 		return Cache::set($cache_id,
 			(
 				JFactory::getDocument()->getType() == 'pdf'
-				|| JFactory::getApplication()->input->getWord('format') == 'pdf'
-				|| JFactory::getApplication()->input->getWord('cAction') == 'pdf'
+				|| $input->getWord('format') == 'pdf'
+				|| $input->getWord('cAction') == 'pdf'
 			)
 		);
 	}
@@ -232,14 +236,23 @@ class Document
 			return Cache::get($cache_id);
 		}
 
+		$app   = JFactory::getApplication();
+		$input = $app->input;
+
 		// Return false if it is not a category page
-		if ($context != 'com_content.category' || JFactory::getApplication()->input->get('view') != 'category')
+		if ($context != 'com_content.category' || $input->get('view') != 'category')
 		{
 			return Cache::set($cache_id, false);
 		}
 
-		// Return false if it is not a list layout
-		if (JFactory::getApplication()->input->get('layout') && JFactory::getApplication()->input->get('layout') != 'list')
+		// Return false if layout is set and it is not a list layout
+		if ($input->get('layout') && $input->get('layout') != 'list')
+		{
+			return Cache::set($cache_id, false);
+		}
+
+		// Return false if default layout is set to blog
+		if ($app->getParams()->get('category_layout') == '_:blog')
 		{
 			return Cache::set($cache_id, false);
 		}
@@ -263,7 +276,7 @@ class Document
 
 		if (strpos($file, 'regularlabs/') === 0)
 		{
-			$version = '18.10.1468';
+			$version = '18.10.19424';
 		}
 
 		if ( ! $file = File::getMediaFile('js', $file))
@@ -289,7 +302,7 @@ class Document
 	{
 		if (strpos($file, 'regularlabs/') === 0)
 		{
-			$version = '18.10.1468';
+			$version = '18.10.19424';
 		}
 
 		if ( ! $file = File::getMediaFile('css', $file))

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -156,10 +156,18 @@ class Article
 	{
 		self::processText('title', $article, $helper, $method, $params, $ignore);
 		self::processText('created_by_alias', $article, $helper, $method, $params, $ignore);
+		self::processText('description', $article, $helper, $method, $params, $ignore);
 
+		// Don't replace in text fields in the category list view, as they won't get used anyway
 		if (Document::isCategoryList($context))
 		{
-			self::processText('description', $article, $helper, $method, $params, $ignore);
+			return;
+		}
+
+		// prevent fulltext from being messed with, when it is a json encoded string (Yootheme Pro templates do this for some weird f-ing reason)
+		if ( ! empty($article->fulltext) && substr($article->fulltext, 0, 6) == '<!-- {')
+		{
+			self::processText('text', $article, $helper, $method, $params, $ignore);
 
 			return;
 		}

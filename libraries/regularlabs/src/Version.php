@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -209,7 +209,7 @@ class Version
 		$is_pro = strpos($version, 'PRO') !== false;
 
 		if (
-			! JFile::exists(JPATH_ADMINISTRATOR . '/components/com_regularlabsmanager/regularlabsmanager.xml')
+			! file_exists(JPATH_ADMINISTRATOR . '/components/com_regularlabsmanager/regularlabsmanager.xml')
 			|| ! JComponentHelper::isInstalled('com_regularlabsmanager')
 			|| ! JComponentHelper::isEnabled('com_regularlabsmanager')
 		)
@@ -243,7 +243,7 @@ class Version
 			var RLEM_TOKEN = '" . JSession::getFormToken() . "';
 		"
 		);
-		Document::script('regularlabsmanager/script.min.js', '18.10.1468');
+		Document::script('regularlabsmanager/script.min.js', '18.10.19424');
 
 		$url = 'https://download.regularlabs.com?ext=' . $alias . '&j=3';
 

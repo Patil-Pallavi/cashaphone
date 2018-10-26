@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -252,7 +252,7 @@ class Parameters
 		}
 
 		if ( ! $path
-			|| ! JFile::exists($path)
+			|| ! file_exists($path)
 			|| ! $file = JFile::read($path)
 		)
 		{

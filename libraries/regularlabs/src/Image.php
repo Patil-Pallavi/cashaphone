@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -57,7 +57,7 @@ class Image
 
 		$override = File::getDirName($source) . '/' . $folder . '/' . File::getBaseName($source);
 
-		if (JFile::exists(JPATH_SITE . '/' . $override))
+		if (file_exists(JPATH_SITE . '/' . $override))
 		{
 			$source = $override;
 		}
@@ -79,7 +79,7 @@ class Image
 			$destination_folder
 		);
 
-		if ( ! JFile::exists(JPATH_SITE . '/' . $destination) && $resize)
+		if ( ! file_exists(JPATH_SITE . '/' . $destination) && $resize)
 		{
 			// Create new resized image
 			$destination = self::resize(
@@ -91,7 +91,7 @@ class Image
 			);
 		}
 
-		if ( ! JFile::exists(JPATH_SITE . '/' . $destination))
+		if ( ! file_exists(JPATH_SITE . '/' . $destination))
 		{
 			return $source;
 		}
@@ -101,6 +101,16 @@ class Image
 
 	public static function isResized($file, $folder = 'resized', $possible_suffix = '')
 	{
+		if (File::isExternal($file))
+		{
+			return false;
+		}
+
+		if ( ! file_exists($file))
+		{
+			return false;
+		}
+
 		if ($main_image = self::isResizedWithFolder($file, $folder))
 		{
 			return $main_image;
@@ -130,7 +140,7 @@ class Image
 			return false;
 		}
 
-		if ( ! JFile::exists(JPATH_SITE . '/' . utf8_decode($main_file)))
+		if ( ! file_exists(JPATH_SITE . '/' . utf8_decode($main_file)))
 		{
 			return false;
 		}
@@ -152,7 +162,7 @@ class Image
 		}
 
 		// Check if image with same name exists in parent folder
-		if (JFile::exists($parent_folder . '/' . utf8_decode($file)))
+		if (file_exists(JPATH_SITE . '/' .$parent_folder . '/' . utf8_decode($file)))
 		{
 			return $parent_folder . '/' . $file;
 		}
@@ -166,12 +176,12 @@ class Image
 		);
 
 		// Check again if image with same name (but without dimensions) exists in parent folder
-		if ( ! JFile::exists(JPATH_SITE . '/' . $parent_folder . '/' . utf8_decode($file)))
+		if ( file_exists(JPATH_SITE . '/' . $parent_folder . '/' . utf8_decode($file)))
 		{
-			return false;
+			return $parent_folder . '/' . $file;
 		}
 
-		return $parent_folder . '/' . $file;
+		return false;
 	}
 
 	public static function resize($source, &$width, &$height, $destination_folder = '', $quality = 'medium', $overwrite = false)
@@ -284,16 +294,28 @@ class Image
 
 	public static function getWidth($source)
 	{
-		return (new JImage(JPATH_SITE . '/' . $source))->getWidth();
+		$dimensions = self::getDimensions($source);
+
+		return $dimensions->width;
 	}
 
 	public static function getHeight($source)
 	{
-		return (new JImage(JPATH_SITE . '/' . $source))->getHeight();
+		$dimensions = self::getDimensions($source);
+
+		return $dimensions->height;
 	}
 
 	public static function getDimensions($source)
 	{
+		if (File::isExternal($source))
+		{
+			return (object) [
+				'width'  => 0,
+				'height' => 0,
+			];
+		}
+
 		$image = new JImage(JPATH_SITE . '/' . $source);
 
 		return (object) [

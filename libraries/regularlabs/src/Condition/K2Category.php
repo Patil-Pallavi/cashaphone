@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -88,6 +88,11 @@ class K2Category
 		if ($this->article && isset($this->article->catid))
 		{
 			return $this->article->catid;
+		}
+
+		if ( ! $this->request->id)
+		{
+			return $this->getCategoryID();
 		}
 
 		$query = $this->db->getQuery(true)

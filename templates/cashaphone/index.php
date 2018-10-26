@@ -35,10 +35,10 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
     $jinput = JFactory::getApplication()->input;
     $articleId = JRequest::getVar('id');
 
-    if ($jinput->get('option') == 'com_wrapper') {
+    if ($jinput->get('option') == 'com_wrapper' || $jinput->get('option') == 'com_visforms') {
         $currentMenuId = JSite::getMenu()->getActive()->id;
         $menuitem = $app->getMenu()->getItem($currentMenuId);
-        $manufacturer = $menuitem->params['menu-meta_keywords'];
+        $meta_key = $menuitem->params['menu-meta_keywords'];
     }
     ?>
     <?php 
@@ -55,7 +55,7 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
     ?> 
     <?php if ($articleId == '14') { ?>
     <jdoc:include type="component" />    
-<?php } else if (isset($manufacturer) && $manufacturer == 'manufacturer') { ?>
+<?php } else if (isset($meta_key) && $meta_key == 'manufacturer') { ?>
     <section class="gadget-area">		
         <jdoc:include type="modules" name="fullwidth" style="none" />
 
@@ -66,6 +66,26 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                 <?php } ?>
                 <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-8"
                      <jdoc:include type="component" />
+                </div>
+                <?php if ($this->countModules('right')) { ?>
+                    <jdoc:include type="modules" name="right" style="none" />
+                <?php } ?>
+            </div>
+        </div>
+
+    </section>
+<?php } else if (isset($meta_key) && $meta_key == 'bulk_buy_form') { ?>
+    <section class="bulk_buy_back">       
+        <jdoc:include type="modules" name="fullwidth" style="none" />
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <?php if ($this->countModules('left')) { ?>
+                    <jdoc:include type="modules" name="left" style="none" />
+                <?php } ?>
+                <div class="col- col-sm-12 col-md-8 col-lg-5 col-xl-5">
+                    <h1>Bulk Buy Back</h1>
+                    <jdoc:include type="component" />
                 </div>
                 <?php if ($this->countModules('right')) { ?>
                     <jdoc:include type="modules" name="right" style="none" />

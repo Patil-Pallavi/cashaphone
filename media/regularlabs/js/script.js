@@ -1,6 +1,6 @@
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -397,35 +397,4 @@ var RegularLabsScripts = null;
 			return '';
 		}
 	};
-
-	$(document).ready().delay(1000, function() {
-		$('.btn-group.rl_btn-group label').click(function() {
-			var label = $(this);
-			var input = $('#' + label.attr('for'));
-
-			label.closest('.btn-group').find('label').removeClass('active btn-success btn-danger btn-primary');
-			if (input.val() == '' || input.val() == -2) {
-				label.addClass('active btn-primary');
-			} else if (input.val() == -1) {
-				label.addClass('active');
-			} else if (input.val() == 0) {
-				label.addClass('active btn-danger');
-			} else {
-				label.addClass('active btn-success');
-			}
-			input.prop('checked', true);
-		});
-		$('.btn-group.rl_btn-group input[checked=checked]').each(function() {
-			$('label[for=' + $(this).attr('id') + ']').removeClass('active btn-success btn-danger btn-primary');
-			if ($(this).val() == '' || $(this).val() == -2) {
-				$('label[for=' + $(this).attr('id') + ']').addClass('active btn-primary');
-			} else if ($(this).val() == -1) {
-				$('label[for=' + $(this).attr('id') + ']').addClass('active');
-			} else if ($(this).val() == 0) {
-				$('label[for=' + $(this).attr('id') + ']').addClass('active btn-danger');
-			} else {
-				$('label[for=' + $(this).attr('id') + ']').addClass('active btn-success');
-			}
-		});
-	});
 })(jQuery);

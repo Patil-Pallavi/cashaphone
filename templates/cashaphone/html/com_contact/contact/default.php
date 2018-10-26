@@ -14,7 +14,11 @@ jimport('joomla.html.html.bootstrap');
 $cparams = JComponentHelper::getParams('com_media');
 $tparams = $this->item->params;
 
+
+$app = JFactory::getApplication();
+$messageQueue = $app->getMessageQueue();
 ?>
 <?php
 	echo $this->loadTemplate('form');
 ?>
+<jdoc:include type="message" />

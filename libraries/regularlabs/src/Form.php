@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -217,7 +217,7 @@ class Form
 			else
 			{
 				$selected = in_array($option->value, $value) ? ' checked="checked"' : '';
-				$disabled = (isset($option->disable) && $option->disable) ? ' readonly="readonly" style="visibility:hidden"' : '';
+				$disabled = (isset($option->disable) && $option->disable) ? ' disabled="disabled"' : '';
 
 				$item .= '<input type="checkbox" class="pull-left" name="' . $name . '" id="' . $id . $option->value . '" value="' . $option->value . '"' . $selected . $disabled . '>
 					<label for="' . $id . $option->value . '" class="' . $labelclass . '">' . $option->text . '</label>';

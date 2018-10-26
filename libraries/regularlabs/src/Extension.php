@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.10.19424
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -13,9 +13,10 @@ namespace RegularLabs\Library;
 
 defined('_JEXEC') or die;
 
-use JFile;
 use JFolder;
+use Joomla\CMS\Component\ComponentHelper as JComponentHelper;
 use Joomla\CMS\Factory as JFactory;
+use Joomla\CMS\Helper\ModuleHelper as JModuleHelper;
 use Joomla\CMS\Installer\Installer as JInstaller;
 use Joomla\CMS\Language\Text as JText;
 use Joomla\CMS\Plugin\PluginHelper as JPluginHelper;
@@ -130,12 +131,12 @@ class Extension
 		switch ($type)
 		{
 			case 'component':
-				if (JFile::exists(JPATH_ADMINISTRATOR . '/components/com_' . $extension . '/' . $extension . '.php')
-					|| JFile::exists(JPATH_ADMINISTRATOR . '/components/com_' . $extension . '/admin.' . $extension . '.php')
-					|| JFile::exists(JPATH_SITE . '/components/com_' . $extension . '/' . $extension . '.php')
+				if (file_exists(JPATH_ADMINISTRATOR . '/components/com_' . $extension . '/' . $extension . '.php')
+					|| file_exists(JPATH_ADMINISTRATOR . '/components/com_' . $extension . '/admin.' . $extension . '.php')
+					|| file_exists(JPATH_SITE . '/components/com_' . $extension . '/' . $extension . '.php')
 				)
 				{
-					if ($extension == 'cookieconfirm' && JFile::exists(JPATH_ADMINISTRATOR . '/components/com_cookieconfirm/version.php'))
+					if ($extension == 'cookieconfirm' && file_exists(JPATH_ADMINISTRATOR . '/components/com_cookieconfirm/version.php'))
 					{
 						// Only Cookie Confirm 2.0.0.rc1 and above is supported, because
 						// previous versions don't have isCookiesAllowed()
@@ -152,13 +153,13 @@ class Extension
 				break;
 
 			case 'plugin':
-				return JFile::exists(JPATH_PLUGINS . '/' . $folder . '/' . $extension . '/' . $extension . '.php');
+				return file_exists(JPATH_PLUGINS . '/' . $folder . '/' . $extension . '/' . $extension . '.php');
 
 			case 'module':
-				return (JFile::exists(JPATH_ADMINISTRATOR . '/modules/mod_' . $extension . '/' . $extension . '.php')
-					|| JFile::exists(JPATH_ADMINISTRATOR . '/modules/mod_' . $extension . '/mod_' . $extension . '.php')
-					|| JFile::exists(JPATH_SITE . '/modules/mod_' . $extension . '/' . $extension . '.php')
-					|| JFile::exists(JPATH_SITE . '/modules/mod_' . $extension . '/mod_' . $extension . '.php')
+				return (file_exists(JPATH_ADMINISTRATOR . '/modules/mod_' . $extension . '/' . $extension . '.php')
+					|| file_exists(JPATH_ADMINISTRATOR . '/modules/mod_' . $extension . '/mod_' . $extension . '.php')
+					|| file_exists(JPATH_SITE . '/modules/mod_' . $extension . '/' . $extension . '.php')
+					|| file_exists(JPATH_SITE . '/modules/mod_' . $extension . '/mod_' . $extension . '.php')
 				);
 
 			case 'library':
@@ -166,6 +167,44 @@ class Extension
 		}
 
 		return false;
+	}
+
+	/**
+	 * Check if the Regular Labs Library is enabled
+	 *
+	 * @return bool
+	 */
+	public static function isEnabled($extension, $type = 'component', $folder = 'system')
+	{
+		$extension = strtolower($extension);
+
+		if(!self::isInstalled($extension, $type, $folder)) {
+			return false;
+		}
+
+		switch ($type)
+		{
+			case 'component':
+				return JComponentHelper::isEnabled($extension);
+
+			case 'plugin':
+				return JPluginHelper::isEnabled($folder, $extension);
+
+			case 'module':
+				return JModuleHelper::isEnabled($extension);
+		}
+
+		return false;
+	}
+
+	/**
+	 * Check if the Regular Labs Library is enabled
+	 *
+	 * @return bool
+	 */
+	public static function isFrameworkEnabled()
+	{
+		return JPluginHelper::isEnabled('system', 'regularlabs');
 	}
 
 	/**
@@ -360,7 +399,7 @@ class Extension
 
 		foreach ($files as $file)
 		{
-			if ( ! JFile::exists($file))
+			if ( ! file_exists($file))
 			{
 				continue;
 			}
@@ -369,16 +408,6 @@ class Extension
 		}
 
 		return '';
-	}
-
-	/**
-	 * Check if the Regular Labs Library is enabled
-	 *
-	 * @return bool
-	 */
-	public static function isFrameworkEnabled()
-	{
-		return JPluginHelper::isEnabled('system', 'regularlabs');
 	}
 
 	public static function isAuthorised($require_core_auth = true)
