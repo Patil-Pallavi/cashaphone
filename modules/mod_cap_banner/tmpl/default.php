@@ -22,30 +22,30 @@ $imagesDir = JURI::base() . 'images/cashaphone';
                                         <div id="caretIcon"></div>
                                     </button>
                                     <ul id="demolist" class="dropdown-menu" role="menu">
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/alcatel-icon.png"></span>Alcatel</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/iphone-icon.png"></span>iPhone</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/ipad-icon.png"></span>iPad</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/iphod-icon.png"></span>iPod</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/apple-watch.png"></span>Watch</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/mac-icon.png"></span>MacBook</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/blackberry-icon.png"></span>Blackberry</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/GOOGLE-PIXEL.png"></span>GPixel</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/htc-icon.png"></span>HTC</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/huwai-icon.png"></span>Huawei</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/lg-icon.png"></span>LG</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Motorola_logo.png"></span>Motorola</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/nokia-icon.png"></span>Nokia</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Oppo-logo.png"></span>Oppo</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Samsung-logo.png"></span>Samsung</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/sony-icon.png"></span>Sony</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Telstra.png"></span>Telstra</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Xiaomi.png"></span>Xiaomi</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/ZTE_logo.png"></span>ZTE</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Tablets.png"></span>Tablets</a></li>
-                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/data-dongles.png"></span>Data Dongles</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/alcatel-icon.png" alt="Alcatel"></span>Alcatel</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/iphone-icon.png" alt="iPhone"></span>iPhone</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/ipad-icon.png" alt="iPad"></span>iPad</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/iphod-icon.png" alt="iPod"></span>iPod</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/apple-watch.png" alt="Apple Watch"></span>Watch</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/mac-icon.png" alt="MacBook"></span>MacBook</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/blackberry-icon.png" alt="Blackberry"></span>Blackberry</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/GOOGLE-PIXEL.png" alt="GPixel"></span>GPixel</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/htc-icon.png" alt="HTC"></span>HTC</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/huwai-icon.png" alt="Huawei"></span>Huawei</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/lg-icon.png" alt="LG"></span>LG</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Motorola_logo.png" alt="Motorola"></span>Motorola</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/nokia-icon.png" alt="Nokia"></span>Nokia</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Oppo-logo.png" alt="Oppo"></span>Oppo</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Samsung-logo.png" alt="Samsung"></span>Samsung</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/sony-icon.png" alt="Sony"></span>Sony</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Telstra.png" alt="Telstra"></span>Telstra</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Xiaomi.png" alt="Xiaomi"></span>Xiaomi</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/ZTE_logo.png" alt="ZTE"></span>ZTE</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/Tablets.png" alt="Tablets"></span>Tablets</a></li>
+                                        <li><a href="#"><span><img src="<?php echo $imagesDir; ?>/data-dongles.png" alt="Data Dongles"></span>Data Dongles</a></li>
                                     </ul>
                                     <input id="roksearch_search_str" class="form-control" type="text" name="model" value="" placeholder="SEARCH YOUR MODEL HERE">
-                                    <button><a href="#"><img src="<?php echo $imagesDir; ?>/search.png" alt=""></a></button>
+                                    <button><a href="#"><img src="<?php echo $imagesDir; ?>/search.png" alt="Search"></a></button>
                                     <input type="hidden" name="make" value="">
                                     <input type="hidden" name="Search" value="search">
                                 </div>

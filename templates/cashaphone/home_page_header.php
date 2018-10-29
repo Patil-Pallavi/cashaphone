@@ -4,7 +4,7 @@
             <div class="row">
                 <!-- logo --> 
                 <div class="col-2">
-                    <a href="home" class="logo"><img class="img-responsive" src="images/cashaphone/logo.png" alt=""/></a>
+                    <a href="home" class="logo"><img class="img-responsive" src="images/cashaphone/logo.png" alt="Cash A Phone Logo"/></a>
                 </div>
                 <!-- logo -->
                 <div class="col-10">
@@ -15,7 +15,7 @@
                                     <input id="top_search" class="form-control" type="text" name="model" value="" placeholder="SEARCH YOUR MODEL HERE">
                                     <input type="hidden" name="make" value="">
                                     <input type="hidden" name="Search" value="search">
-                                    <button><img src="images/cashaphone/top_search_new.png" alt="" ></button>
+                                    <button><img src="images/cashaphone/top_search_new.png" alt="Search" ></button>
                                 </div>
                             </form>
                         </div>
