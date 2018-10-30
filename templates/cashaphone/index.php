@@ -36,9 +36,10 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
     $articleId = JRequest::getVar('id');
 
     if ($jinput->get('option') == 'com_wrapper' || $jinput->get('option') == 'com_visforms') {
-        $currentMenuId = JSite::getMenu()->getActive()->id;
+        $currentMenuId = JSite::getMenu()->getActive()->id;        
         $menuitem = $app->getMenu()->getItem($currentMenuId);
-        $meta_key = $menuitem->params['menu-meta_keywords'];
+        //echo "<pre>"; print_r($menuitem);die;
+        $meta_key = $menuitem->note;
     }
     ?>
     <?php 
@@ -74,7 +75,7 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
         </div>
 
     </section>
-<?php } else if (isset($meta_key) && $meta_key == 'bulk_buy_form') { ?>
+<?php } else if (isset($meta_key) && $meta_key == 'bulk buy form') { ?>
     <section class="bulk_buy_back">       
         <jdoc:include type="modules" name="fullwidth" style="none" />
 
