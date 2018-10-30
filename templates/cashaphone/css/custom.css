@@ -2950,4 +2950,8 @@ label{
     text-decoration: none;
     transition: all 0.5s ease 0s;
     width: 70% !important;
-}   
+}
+.video-box img {
+    width: 100%;
+    height: auto;
+}
