@@ -2918,6 +2918,7 @@ footer .footer-bottom span{
     border-radius : 0 !important;
     margin: 0 0 13px;
     border: 1px solid #a9a9a9;
+    width: 100% !important;
 }
 
 .visform textarea{
