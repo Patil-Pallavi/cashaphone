@@ -26,7 +26,7 @@
 				  </a>
 				</li>
 				<li>
-				  <a href="how-does-it_-work">
+				  <a href="how-does-it-work">
 				  	<span><img src="images/cashaphone/how_does_icon.png" alt="How does it Works?"></span> How does it Works?
 				  </a>
 				</li>
