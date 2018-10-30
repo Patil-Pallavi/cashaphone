@@ -67,7 +67,7 @@
 				  </a>
 				</li>
 				<li>
-				  <a href="#">
+				  <a href="https://plus.google.com/u/0/b/106314295692683592684/106314295692683592684">
 				  	<span><img src="images/cashaphone/news_icon.png" alt="NewsBlogs"></span> NewsBlogs
 				  </a>
 				</li>
