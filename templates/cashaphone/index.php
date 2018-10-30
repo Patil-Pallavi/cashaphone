@@ -91,7 +91,7 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                         <h1>Bulk Buy Back</h1>
                     <?php } if(isset($meta_key) && $meta_key == 'contact form'){ ?> 
                         <h1>Contact Us</h1>
-                        <div class="contact_us_cont">
+                        <div class=".contact-us-cont-area">
                     <?php } ?>                    
                     <jdoc:include type="component" />
                 </div>
