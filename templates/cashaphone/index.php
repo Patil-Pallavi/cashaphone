@@ -176,7 +176,7 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-5 align-self-center">
                                             <jdoc:include type="modules" name="footer-3"/>
-                                            <a href="https://plus.google.com/u/0/b/106314295692683592684/106314295692683592684" class="news-blog-btn">NEWS BLOG</a>
+                                            <a href="https://plus.google.com/u/0/b/106314295692683592684/106314295692683592684" class="news-blog-btn" title="NewsBlogs" target="_blank">NEWS BLOG</a>
                                         </div>
                                     </div>
                                 </div>
