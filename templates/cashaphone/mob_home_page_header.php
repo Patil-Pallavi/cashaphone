@@ -1,3 +1,4 @@
+<?php $imagesDir = JURI::base() . 'images/cashaphone'; ?>
 <header>
   <div class="container">
   	<div class="mobile_headaer">
