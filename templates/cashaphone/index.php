@@ -149,27 +149,27 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                 <div class="container">
                     <div class="footer-top">
                         <div class="row">
-                            <div class="col- col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <div class="footer-left-nav">
                                     <div class="row">
-                                        <div class="col- col-sm-12 col-md-12 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1">
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1">
                                             <h2>Navigation</h2>
                                             <jdoc:include type="modules" name="footer-1"/>
                                         </div>
-                                        <div class="col- col-sm-12 col-md-12 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1">
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1">
                                             <h2>Information</h2>
                                             <jdoc:include type="modules" name="footer-2"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col- col-sm-12 col-md-6 col-lg-6 col-xl-6 align-self-center">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 align-self-center">
                                 <div class="fotter-social">
                                     <div class="row">
-                                        <div class="col- col-sm-12 col-md-12 col-lg-5 col-xl-5 align-self-center">
+                                        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 align-self-center">
                                             <h2>Follow Us With</h2>
                                         </div>
-                                        <div class="col- col-sm-12 col-md-12 col-lg-5 col-xl-5 align-self-center">
+                                        <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-5 align-self-center">
                                             <jdoc:include type="modules" name="footer-3"/>
                                             <a href="https://plus.google.com/u/0/b/106314295692683592684/106314295692683592684" class="news-blog-btn">NEWS BLOG</a>
                                         </div>
