@@ -25,7 +25,8 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
         <link href="<?php echo $templateDir; ?>/css/responsive.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="<?php echo $templateDir; ?>/images/favicon.png"/>
-        <script src="<?php echo $templateDir; ?>/js/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>        
+        <!-- <script src="<?php echo $templateDir; ?>/js/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>         -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <jdoc:include type="head" />
 </head>
 <body>    	
@@ -191,5 +192,6 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
             <script src="<?php echo $templateDir; ?>/js/jquery.min.js"></script>
             <script src="<?php echo $templateDir; ?>/js/bootstrap.min.js"></script>
             <script src="<?php echo $templateDir; ?>/js/html5lightbox.js"></script>
-            <script src="<?php echo $templateDir; ?>/js/popper-2.min.js"></script>
+            <!-- <script src="<?php echo $templateDir; ?>/js/popper-2.min.js"></script> -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
             <script src="<?php echo $templateDir; ?>/js/custom.js"></script>
