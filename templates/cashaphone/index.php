@@ -137,9 +137,15 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                         <div class="container">
                             <div class="row">
                                 <jdoc:include type="modules" name="left" style="none" />
-                                <jdoc:include type="component" />
                                 <jdoc:include type="modules" name="middle" style="none" />
                                 <jdoc:include type="modules" name="right" style="none" />
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <?php if($jinput->get('option') == 'com_wrapper'){ ?>
+                        <div class="container">
+                            <div class="<?php echo $active->alias; ?>-cont-area">
+                                <jdoc:include type="component" />
                             </div>
                         </div>
                     <?php } ?>
