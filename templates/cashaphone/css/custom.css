@@ -2956,10 +2956,9 @@ label{
     height: auto;
 }
 .sitemap-sec h2{
-    font-size: 28px;
-    color: #70b737;
-    margin: 0px 0px 18px;
-    font-family: 'Montserrat', sans-serif;
+    color: #5f615d;
+    font-family: "Montserrat",sans-serif;
+    font-size: 16px;
     font-weight: 700;
 }
 .sitemap-sec a{
