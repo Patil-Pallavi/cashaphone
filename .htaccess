@@ -44,7 +44,6 @@ RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
 RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
 # Return 403 Forbidden header and show the content of the root home page
 RewriteRule .* index.php [F]
-RewriteRule /contact-us /contact-us-header [F]
 #
 ## End - Rewrite rules to block out some common exploits.
 
