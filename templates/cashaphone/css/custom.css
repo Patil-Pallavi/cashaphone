@@ -2955,3 +2955,13 @@ label{
     width: 100%;
     height: auto;
 }
+.sitemap-sec h2{
+    font-size: 28px;
+    color: #70b737;
+    margin: 0px 0px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.sitemap-sec a{
+    font-family: 'Montserrat', sans-serif;
+}
