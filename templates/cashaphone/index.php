@@ -75,15 +75,12 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
 
     </section>
 <?php } else if ($jinput->get('option') == 'com_visforms') { ?>
-    <!-- isset($meta_key) && $meta_key == 'bulk buy form' -->
     <?php if(isset($meta_key) && $meta_key == 'bulk buy form'){ ?> 
         <section class="bulk_buy_back">
     <?php } if(isset($meta_key) && $meta_key == 'contact form'){ ?> 
         <section class="contact-us-sec">
     <?php } ?>
-    <!-- <section class="bulk_buy_back">        -->
         <jdoc:include type="modules" name="fullwidth" style="none" />
-
         <div class="container">
             <div class="row justify-content-center">
                 <?php if ($this->countModules('left')) { ?>
@@ -94,9 +91,17 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                         <h1>Bulk Buy Back</h1>
                     <?php } if(isset($meta_key) && $meta_key == 'contact form'){ ?> 
                         <h1>Contact Us</h1>
+                        <div class="contact_us_cont">
                     <?php } ?>                    
                     <jdoc:include type="component" />
                 </div>
+                <?php } if(isset($meta_key) && $meta_key == 'contact form'){ ?>
+                        </div>
+                    <div class="help_desk">
+                        <h2>We are here to help :</h2>
+                        <span>Tel : 1300 771 330</span>
+                    </div>
+                    <?php } ?>
                 <?php if ($this->countModules('right')) { ?>
                     <jdoc:include type="modules" name="right" style="none" />
                 <?php } ?>
