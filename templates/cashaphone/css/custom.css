@@ -1258,7 +1258,7 @@ footer .footer-bottom span{
     margin-bottom: 35px;
     border-bottom: 1px solid #e6e6e6;
 }
-.contact-us-sec .contact-us-cont-area input,
+/*.contact-us-sec .contact-us-cont-area input,
 .contact-us-sec .contact-us-cont-area textarea{
     border: 1px solid #a9a9a9;
     border-radius: 0px;
@@ -1269,7 +1269,7 @@ footer .footer-bottom span{
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-}
+}*/
 .contact-us-sec .contact-us-cont-area textarea{
     height: auto !important;
 }
