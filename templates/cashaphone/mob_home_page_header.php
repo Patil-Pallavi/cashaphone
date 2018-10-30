@@ -27,57 +27,57 @@
 				  </a>
 				</li>
 				<li>
-				  <a href="how-does-it-work">
+				  <a href="how-does-it-work" title="How does it Works?">
 				  	<span><img src="images/cashaphone/how_does_icon.png" alt="How does it Works?"></span> How does it Works?
 				  </a>
 				</li>
 				<li>
-				  <a href="why-us">
+				  <a href="why-us" title="Why Us?">
 				  	<span><img src="images/cashaphone/why_icon.png" alt="Why Us?"></span> Why Us?
 				  </a>
 				</li>
 				<li>
-				  <a href="identification">
+				  <a href="identification" title="Identification">
 				  	<span><img src="images/cashaphone/identification_icon.png" alt="Identification"></span> Identification
 				  </a>
 				</li>
 				<li>
-				  <a href="faq">
+				  <a href="faq" title="FAQ">
 				  	<span><img src="images/cashaphone/faq_icon.png" alt="FAQ"></span> F.A.Q.
 				  </a>
 				</li>
 				<li>
-				  <a href="posting-instruction">
+				  <a href="posting-instruction" title="Posting instructions">
 				  	<span><img src="images/cashaphone/posting_icon.png" alt="Posting instructions"></span> Posting instructions 
 				  </a>
 				</li>
 				<li>
-				  <a href="bitcoin">
+				  <a href="bitcoin" title="Bitcoin">
 				  	<span><img src="images/cashaphone/bitcoin_icon.png" alt="Bitcoin"></span> Bitcoin 
 				  </a>
 				</li>
 				<li>
-				  <a href="bulkbuy-form">
+				  <a href="bulk-buy-back" title="Bulk Buy Back">
 				  	<span><img src="images/cashaphone/bulk_buy_back_icon.png" alt="Bulk Buy Back"></span> Bulk Buy Back
 				  </a>
 				</li>
 				<li>
-				  <a href="about-us">
+				  <a href="about-us" title="About Us">
 				  	<span><img src="images/cashaphone/about_icon.png" alt="About Us"></span> About Us
 				  </a>
 				</li>
 				<li>
-				  <a href="https://plus.google.com/u/0/b/106314295692683592684/106314295692683592684">
+				  <a href="https://plus.google.com/u/0/b/106314295692683592684/106314295692683592684" title="NewsBlogs" target="_blank">
 				  	<span><img src="images/cashaphone/news_icon.png" alt="NewsBlogs"></span> NewsBlogs
 				  </a>
 				</li>
 				<li>
-				  <a href="terms-condition">
+				  <a href="terms-condition" title="Terms & Conditions">
 				  	<span><img src="images/cashaphone/tc_icon.png" alt="Ts & Cs"></span> Ts & Cs
 				  </a>
 				</li>
 				<li>
-				  <a href="contact-us">
+				  <a href="contact-us" title="Contact Us">
 				  	<span><img src="images/cashaphone/contact_icon.png" alt="Contact Us"></span> Contact Us
 				  </a>
 				</li>
