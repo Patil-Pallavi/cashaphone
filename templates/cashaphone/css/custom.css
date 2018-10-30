@@ -1270,9 +1270,9 @@ footer .footer-bottom span{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }*/
-.contact-us-sec .contact-us-cont-area textarea{
+/*.contact-us-sec .contact-us-cont-area textarea{
     height: auto !important;
-}
+}*/
 .contact-us-sec .contact-us-cont-area input::-webkit-input-placeholder,
 .contact-us-sec .contact_us_cont textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #acacac;
