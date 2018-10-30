@@ -117,9 +117,7 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
             <div class="<?php echo $active->alias; ?>-cont-area">
                 <?php if ($articleId == 8 || $articleId == 9) { ?>
                     <div class="row">
-                    <?php } elseif (!($this->countModules('left')) && !($this->countModules('left'))) { ?>
-                        <div class="row justify-content-center">
-                        <?php } else { ?>
+                    <?php } else { ?>
                             <div class="row">
                             <?php } ?>					
                             <jdoc:include type="modules" name="left" style="none" />
