@@ -38,7 +38,6 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
     if ($jinput->get('option') == 'com_wrapper' || $jinput->get('option') == 'com_visforms') {
         $currentMenuId = JSite::getMenu()->getActive()->id;        
         $menuitem = $app->getMenu()->getItem($currentMenuId);
-        //echo "<pre>"; print_r($menuitem);die;
         $meta_key = $menuitem->note;
     }
     ?>
@@ -75,8 +74,14 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
         </div>
 
     </section>
-<?php } else if (isset($meta_key) && $meta_key == 'bulk buy form') { ?>
-    <section class="bulk_buy_back">       
+<?php } else if ($jinput->get('option') == 'com_visforms') { ?>
+    <!-- isset($meta_key) && $meta_key == 'bulk buy form' -->
+    <?php if(isset($meta_key) && $meta_key == 'bulk buy form'){ ?> 
+        <section class="bulk_buy_back">
+    <?php } if(isset($meta_key) && $meta_key == 'contact form'){ ?> 
+        <section class="contact-us-sec">
+    <?php } ?>
+    <!-- <section class="bulk_buy_back">        -->
         <jdoc:include type="modules" name="fullwidth" style="none" />
 
         <div class="container">
@@ -85,7 +90,11 @@ $templateDir = JURI::base() . 'templates/' . $app->getTemplate();
                     <jdoc:include type="modules" name="left" style="none" />
                 <?php } ?>
                 <div class="col- col-sm-12 col-md-8 col-lg-5 col-xl-5">
-                    <h1>Bulk Buy Back</h1>
+                    <?php if(isset($meta_key) && $meta_key == 'bulk buy form'){ ?> 
+                        <h1>Bulk Buy Back</h1>
+                    <?php } if(isset($meta_key) && $meta_key == 'contact form'){ ?> 
+                        <h1>Contact Us</h1>
+                    <?php } ?>                    
                     <jdoc:include type="component" />
                 </div>
                 <?php if ($this->countModules('right')) { ?>
