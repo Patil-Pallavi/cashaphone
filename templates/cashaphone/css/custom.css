@@ -2955,6 +2955,10 @@ label{
     width: 100%;
     height: auto;
 }
+.sitemap-sec{
+    width: 100%;
+    padding: 200px 0px 50px;
+}
 .sitemap-sec h2{
     color: #5f615d;
     font-family: "Montserrat",sans-serif;
